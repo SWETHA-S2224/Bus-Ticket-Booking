@@ -1,0 +1,252 @@
+<div class="header">
+    <div class="content">
+     <h2>TICKET TO YOUR UTOPIA</h2>
+    </div>
+    <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ffffff;float: right;" (click)="logout()"></i>
+</div>
+  
+    <div class="row row1">
+      <div class="col-3 column1">
+        <div class="card">
+          <p class="from">From</p>
+          <select class="form-select pt-2 pb-3 int1" [(ngModel)]="selectedBoardingPoint" aria-label="Default select example">
+            <option selected value="Koyambedu">Koyambedu</option>
+            <option value="Tiruchirappalli">Tiruchirappalli</option>
+            <option value="Egmore">Egmore</option>
+            <option value="Erode">Erode</option>
+            <option value="Vellore">Vellore</option>
+            <option value="Tambaram">Tambaram</option>
+          </select>
+          <hr style="margin-left: -12px;">
+          <p class="to">To</p>
+         <select class="form-select pt-2 pb-3 int2" [(ngModel)]="selectedDropPoint" aria-label="Default select example">
+            <option value="Madurai Periyar">Madurai Periyar</option>
+            <option value="Gandhipuram">Gandhipuram</option>
+            <option value="Salem">Salem</option>
+            <option value="Nagercoil">Nagercoil</option>
+            <option value="Tirunelveli">Tirunelveli</option> 
+            <option value="Tuticorin">Tuticorin</option>
+            <option value="Thanjavur">Thanjavur</option>
+          </select>
+          <p>Date</p>
+           <mat-form-field class="example-form-field">
+            <mat-label>Choose your travel date</mat-label>
+            <input matInput [matDatepicker]="datepicker" [(ngModel)]="TravelDate" [min]="minDate" [max]="maxDate">
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field> 
+          <div class="buttons d-flex justify-content-center">
+            <div class="col-2" (click)="select()">Search</div>
+            <div class="col-2" (click)="buttonrefresh()">Refresh</div>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="col-9 column2 h-50">
+        <p-table [value]="houses"
+        [paginator]="true"
+               [rows]="pageSize"
+               [totalRecords]="totalRecords"
+               [lazy]="true"
+               [loading]="loading"
+               (onLazyLoad)="loadBusLazy($event)">  
+        <ng-template pTemplate="header"> 
+            <tr> 
+                <th>Bus No</th> 
+                <th>Bus Name</th> 
+                <th>Travels Name</th> 
+                <th>Boarding Point</th>  
+                <th>Drop Point</th> 
+                <th>Ticket Cost</th> 
+                <th>Seat Availability</th> 
+            </tr> 
+        </ng-template> 
+      
+        <ng-template pTemplate="body" let-people> 
+            <tr> 
+                <td>{{ people.bus_No }}</td> 
+                <td>{{ people.bus_Name }}</td> 
+                <td>{{ people.travels_Name }}</td>
+                <td>{{ people.boarding_Point }}</td>
+                <td>{{ people.drop_Point }}</td>
+                <td>{{ people.ticket_Cost }}</td>
+                <td>
+                  <p-button  [link]="true" (click)="showDialog(people.bus_No,people.ticket_Cost)" pTooltip="View" tooltipPosition="left">{{people.seat}}</p-button>
+                </td>
+            </tr> 
+        </ng-template> 
+    </p-table>
+      </div>
+  
+</div>
+
+
+   <p-dialog header=" PICK YOUR SEAT NOW" [(visible)]="visible" [modal]="true" [style]="{ width: '37vw' }" [draggable]="true" [resizable]="false" (onHide)="onCloseButtonClick()">
+       <div style="display: flex;margin-left:30px;margin-bottom: 30px;">
+        <div class="v1" style="padding: 10px;border-right: 1px solid green;">
+          <p style="margin-left:10px;color:rgb(2, 85, 78) ;">Upper Deck</p>
+          <p class="m-0 mb-3 mt-3">
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick1()" [ngClass]="{'red-background1': buttonClicked1,'disabled-button': buttonClicked1}"></i>
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick2()" [ngClass]="{'red-background1': buttonClicked2,'disabled-button': buttonClicked2}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick3()" [ngClass]="{'red-background1': buttonClicked3, 'disabled-button': buttonClicked3}"></i>
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick4()" [ngClass]="{'red-background1': buttonClicked4, 'disabled-button': buttonClicked4}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick5()" [ngClass]="{'red-background1': buttonClicked5, 'disabled-button': buttonClicked5}"></i>
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick6()" [ngClass]="{'red-background1': buttonClicked6, 'disabled-button': buttonClicked6}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick7()" [ngClass]="{'red-background2': buttonClicked7, 'disabled-button': buttonClicked7}"></i>
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick8()" [ngClass]="{'red-background2': buttonClicked8, 'disabled-button': buttonClicked8}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick9()" [ngClass]="{'red-background2': buttonClicked9, 'disabled-button': buttonClicked9}"></i>
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick10()" [ngClass]="{'red-background2': buttonClicked10, 'disabled-button': buttonClicked10}"></i>
+          </p>
+        </div>
+        <div style="padding: 10px;border-right: 1px solid green;">
+          <p style="margin-left:10px;color:rgb(2, 85, 78) ;">Lower Deck</p>
+          <p class="m-0 mb-3 mt-3">
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick11()" [ngClass]="{'red-background1': buttonClicked11, 'disabled-button': buttonClicked11}"></i>
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick12()" [ngClass]="{'red-background1': buttonClicked12, 'disabled-button': buttonClicked12}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick13()" [ngClass]="{'red-background1': buttonClicked13, 'disabled-button': buttonClicked13}"></i>
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick14()" [ngClass]="{'red-background1': buttonClicked14, 'disabled-button': buttonClicked14}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick15()" [ngClass]="{'red-background1': buttonClicked15, 'disabled-button': buttonClicked15}"></i>
+            <i class="fa-solid fa-couch fa-2xl" (click)="handleButtonClick16()" [ngClass]="{'red-background1': buttonClicked16, 'disabled-button': buttonClicked16}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick17()" [ngClass]="{'red-background2': buttonClicked17, 'disabled-button': buttonClicked17}"></i>
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick18()" [ngClass]="{'red-background2': buttonClicked18, 'disabled-button': buttonClicked18}"></i>
+          </p>
+          <p class="m-0 p2 mt-3">
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick19()" [ngClass]="{'red-background2': buttonClicked19, 'disabled-button': buttonClicked19}"></i>
+            <i class="fa-solid fa-couch fa-2xl pink" (click)="handleButtonClick20()" [ngClass]="{'red-background2': buttonClicked20, 'disabled-button': buttonClicked20}"></i>
+          </p>
+        </div>
+       <div style="margin-left: 20px;">
+        <div style="margin-bottom: 40px;margin-top: 55px;">
+          <i class="fa-solid fa-couch fa-2xl" style="color:#f27979"></i> Booked Seats
+        </div>
+        <div style="margin-bottom: 40px;">
+          <i class="fa-solid fa-couch fa-2xl" style="color:#77f277"></i> Available Seats
+        </div>
+        <div>
+          <i class="fa-solid fa-couch fa-2xl" style="color:deeppink"></i> Ladies Seats
+        </div>
+       </div>
+       </div>
+        <button pButton pRipple label="Book" class="confirm p-button-success" (click)="confirm()" [disabled]="disabledButtonCount===0" style="background:rgb(2, 85, 78);border: none;"></button>
+        <button pButton pRipple label="Undo" class="cancel" (click)="cancel()" severity="info" style="border-radius: 2px;border:none"></button>
+  </p-dialog>  
+  
+  
+  <p-dialog header="DETAIL FORM" [(visible)]="users1" [style]="{ width: '30vw' }" [draggable]="true" [resizable]="false">
+  <form>
+    <div *ngFor="let index of countArray;let i = index">
+      <p style="color: rgb(2, 85, 78);text-align: center;margin-top: 5px;">Passenger {{ i+ 1 }}</p>
+      <p style="margin-bottom: 5px;">Name</p>
+      <input type="text" name="user_name" [(ngModel)]="addHousing[i].user_name">
+      <p style="margin-bottom: 5px;">Age</p>
+      <input type="number" name="age" [(ngModel)]="addHousing[i].age">
+      <p style="margin-bottom: 5px;">Gender</p>
+      <div *ngFor="let genderOption of genderOptions" class="field-checkbox">
+        <input type="radio" id="{{ genderOption }}+{{i}}" name='"gender"{{i}}' [value]="genderOption" [(ngModel)]="addHousing[i].gender">
+        <label for="{{ genderOption }}+{{i}}">{{ genderOption }}</label>
+      </div>
+      <hr>
+    </div>
+  </form>
+  <p style="margin-bottom: 5px;">Total Cost: {{cost}}</p>
+    <div class="btn d-flex justify-content-center text-align-center">
+      <button mat-raised-button (click)="BookConfirm()" class="p-button-success">Confirm</button>
+  </div>
+  </p-dialog>
+  
+  
+  <p-toast position="bottom-center" key="confirm" (onClose)="onReject()" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+        <div class="flex flex-column align-items-start" style="flex: 1">
+            <div class="flex align-items-center gap-2">
+                <span class="font-bold text-900">Are you sure. Do you want to proceed?</span>
+            </div>
+            <div class="font-medium text-lg my-3 text-900">{{ message.summary }}</div>
+            <p-button class="p-button-sm" label="Confirm" (click)="onconfirm1()"></p-button>
+            <p-button class="p-button-sm" label="Cancel" (click)="onConfirm()"></p-button>
+        </div>
+    </ng-template>
+  </p-toast>
+  
+
+ <p-dialog header="YOUR TICKET" [(visible)]="visible3" [style]="{display: 'flex'}">
+  <p-card class="ticket" [style]="{ width: '460px' }">
+    <div class="top">
+       <p><i class="fa-solid fa-bus-simple" style="color: #ffffff;margin-right: 10px;"></i>BUS TICKET</p>
+    </div>
+    <div class="details" style="display: flex;">
+      <div class="col-3">
+        <img src="../../assets/barcode (3).png" style="margin-top: 20px;">
+      </div>
+      <div class="col-6" style="margin-top: 20px;">
+        <p class="head">Start</p>
+        <p class="ans">{{ selectedBoardingPoint }}</p>
+        <p class="head">End</p>
+        <p class="ans">{{selectedDropPoint}}</p>
+      </div>
+      <div class="col-4" style="margin-top: 20px;">
+        <p class="head">Date</p>
+        <p class="ans">{{ticketdate}}</p>
+        <p class="head">Seat</p>
+       <div class="ans-container">
+        <p class="ans1" *ngFor="let seat of ticketseat">S{{seat}}</p>
+       </div>
+       <p class="head">Price</p>
+       <p class="ans">{{cost}}</p>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <div class="footer">
+       <p>HAVE A HAPPY JOURNEY</p>
+      </div>
+    </ng-template>
+</p-card>
+<button class="download" (click)="download()">Download</button>
+</p-dialog>
+     
+<!-- <button (click)="click()">Click</button> -->
+
+
+<section #barcodeRef class="printer" id="ticketprint">
+  <div class="output col-12">
+    <div class="h1">
+      <h3>TICKET TO YOUR UTOPIA</h3>
+    </div>
+    <h3 style="text-align: center;">Journey Details</h3>
+     <p class="head">&nbsp;&nbsp;BOARDING POINT : <span class="custom">{{selectedBoardingPoint}}</span></p>
+     <p class="head">&nbsp;&nbsp;DROP POINT : <span class="custom">{{selectedDropPoint}}</span></p>
+     <p class="head">&nbsp;&nbsp;DATE OF JOURNEY : <span class="custom">{{ticketdate}}</span></p>
+     <div class="head">
+      &nbsp;&nbsp;SEAT : 
+      <p class="head1" *ngFor="let seat of ticketseat">S{{seat}}</p>
+     </div>
+     <p class="head">&nbsp;&nbsp;TICKET FARE : <span class="custom">{{ticketfare}}</span></p>
+     <div class="opfoot">
+      <h3 style="margin-bottom: 0px;">HAVE A HAPPY JOURNEY</h3>
+     </div>
+  </div>
+</section>
+
+
+<p-toast position="bottom-center" key="bc"></p-toast>
+<p-toast></p-toast>

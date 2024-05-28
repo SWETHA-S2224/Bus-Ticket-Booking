@@ -1,0 +1,237 @@
+/* .header{
+    background: linear-gradient(to right, rgb(2, 85, 78),rgb(23, 148, 138));
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.content{
+    height: 100px;
+    display: flex;
+    max-width: 1200px;
+    min-width: 559px;
+    margin: 0;
+    H2{
+        color: white;
+        font-size: 50px;
+        letter-spacing: 0.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+.row1{
+    padding: 30px;
+}
+.row1 .column1 .card{
+    padding: 30px;
+    color: black;
+    font-size: 16px;
+    display: flex;
+    position: relative;
+    margin: 0;
+    border: 2px solid rgb(12, 163, 151) ;
+}
+.column2{
+    position: relative;
+}
+p{
+    margin-bottom: 0;
+}
+.from::before{
+    content: " ";
+    margin-left:15px;
+    margin-top: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 24px;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+.to::before{
+    content: " ";
+    margin-left:15px;
+    margin-top: 46px;
+    width: 6px;
+    height: 6px;
+    border-radius: 24px;
+    background: green;
+    position: absolute;
+    left: 0;
+    top: 135px;
+}
+.int1{
+    border: none;
+
+}
+
+.int2
+{
+    border: none;
+}
+.from::after{
+    content: " ";
+    width: 1px;
+    height: 13.6vh;
+    background-color:rgb(190, 189, 189);
+    position:absolute;
+    left: 17.9px;
+    top: 51.5px;
+}
+input{
+    border: 1px solid grey;
+    border-radius: 1px;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    caret-color:rgb(12, 163, 151) ;
+}
+tr{
+    border: 1px solid grey;
+    line-height: 3.4;
+}
+th{
+    color:rgb(2, 85, 78);
+    border: 1px solid grey;
+    text-align: center;
+    background: rgb(2, 85, 78);
+    color: white;
+}
+td{
+    border: 1px solid grey;
+    text-align: center;
+    a{
+        color:rgb(2, 85, 78);
+    }
+}
+
+.col-2{
+    color:rgb(2, 85, 78) ;
+    border: 1px solid rgb(2, 85, 78) ;
+    border-radius: 20px;
+    width:80px;
+    height: 3vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+.col-2:hover{
+    background: rgb(2, 85, 78);
+    color: white;
+    cursor: pointer;
+} 
+
+.p-dialog {
+    background:rgb(23, 148, 138) ;
+    color: rgb(23, 148, 138);
+}
+.a1{
+    border: 1px solid rgb(2, 85, 78);
+    border-radius: 10px;
+    background: white;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    width: 40px;
+    height: 40px;
+}  
+header{
+    text-transform: uppercase;
+}
+#pTooltip{
+    color:red;
+}
+.a1:hover{
+    background:rgba(93, 219, 209, 0.74) ;
+}
+.a1:checked{
+    background: red;
+}
+.book{
+    background: rgba(93, 219, 209, 0.74);
+    border: 1px solid rgb(2, 85, 78);
+    border-radius: 7px;
+    margin-left: 10px;
+}
+.form-control{
+    width: 200px;
+    margin-left: 150px;
+}
+.p-toast-top-right {
+    top: 20px;
+    right: -600px
+}
+
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 9999;
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.25em;
+    border-color: #007bff transparent #007bff transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+  }
+  
+  @keyframes spinner-border {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+
+
+
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+ 
+.confirm{
+    justify-content: center;
+    align-items: center;
+    border:2px solid white;
+    border-radius:5px;
+    margin-left: 170px;
+    margin-right: 10px;
+}
+.cancel{
+    border:2px solid white;
+    border-radius:5px;
+}
+input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+} */

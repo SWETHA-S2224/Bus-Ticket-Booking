@@ -1,0 +1,87 @@
+    <h1>BOOKINGS INFO</h1>
+    <button class="log" (click)="logout()"><i class="fa-solid fa-right-from-bracket fa-lg"></i>Logout</button>
+
+<div class="col-12 pt-4 pl-2 pr-2 column2 h-30">
+    <div class="scrollable-table">
+    <p-table [value]="Bookings"
+    [paginator]="true"
+    [rows]="pageSize"
+    [totalRecords]="totalRecords"
+    [lazy]="true"
+    [loading]="loading"
+    (onLazyLoad)="loadBookLazy($event)">  
+    <ng-template pTemplate="header"> 
+        <tr> 
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Bus No</th> 
+            <th>Bus Name</th> 
+            <th>Travels Name</th> 
+            <th>Boarding Point</th>  
+            <th>Drop Point</th> 
+            <th>Travel Date</th>
+            <th>Status of Booking</th>
+            <th>Ticket Cost</th>
+            <th>No of bookings</th> 
+        </tr> 
+    </ng-template> 
+  
+    <ng-template pTemplate="body" let-book> 
+        <tr> 
+            <td>{{ book.USER_ID }}</td>
+            <td>{{ book.USER_NAME }}</td> 
+            <td>{{ book.AGE }}</td> 
+            <td>{{ book.GENDER }}</td>
+            <td>{{ book.BUS_NO }}</td>
+            <td>{{ book.BUS_NAME }}</td>
+            <td>{{ book.TRAVELS_NAME }}</td>
+            <td>{{ book.BOARDING_POINT }}</td>
+            <td>{{ book.DROP_POINT }}</td>
+            <td>{{ book.DATE_OF_TRAVEL }}</td>
+            <td>{{ book.STATUS }}</td>
+            <td>{{ book.TICKET_COST }}</td>
+            <td>{{ book.NO_OF_BOOKING }}</td>
+        </tr> 
+    </ng-template> 
+   </p-table>
+</div>
+  </div>
+
+  <h1>BUS INFO</h1>
+  <div class="col-12 pt-4 pl-2 pr-2 column2 h-30">
+    <div class="scrollable-table">
+    <p-table [value]="bus"
+    [paginator]="true"
+           [rows]="pageSize"
+           [totalRecords]="totalbusRecords"
+           [lazy]="true"
+           [loading]="loading1"
+           (onLazyLoad)="loadBusLazy($event)">  
+    <ng-template pTemplate="header"> 
+        <tr> 
+            <th>Bus No</th> 
+            <th>Bus Name</th> 
+            <th>Travels Name</th> 
+            <th>Boarding Point</th>  
+            <th>Drop Point</th> 
+            <th>Ticket Cost</th> 
+            <th>Seat Availability</th> 
+        </tr> 
+    </ng-template> 
+  
+    <ng-template pTemplate="body" let-people> 
+        <tr> 
+            <td>{{ people.bus_No }}</td> 
+            <td>{{ people.bus_Name }}</td> 
+            <td>{{ people.travels_Name }}</td>
+            <td>{{ people.boarding_Point }}</td>
+            <td>{{ people.drop_Point }}</td>
+            <td>{{ people.ticket_Cost }}</td>
+            <td> {{people.seat}} </td>
+        </tr> 
+    </ng-template> 
+</p-table>
+</div>
+</div>

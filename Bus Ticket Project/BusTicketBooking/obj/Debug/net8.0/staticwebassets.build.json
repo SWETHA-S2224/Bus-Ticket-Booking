@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mXTJIskCnbkSnG1nJIvZcKsITQglO+waGWnaRSHO9rQ=",
+  "Source": "BusTicketBooking",
+  "BasePath": "_content/BusTicketBooking",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

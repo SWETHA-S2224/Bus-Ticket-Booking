@@ -1,0 +1,99 @@
+.page{
+    display: flex;
+    height: 100vh;
+}
+.page1{
+    /* display: none; */
+    display: flex;
+    height: 100vh;
+}
+.login{
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.login1{
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.bg{
+    /* background: #037243 no-repeat; */
+    background: url('../../assets/bus4\ \(1\).jpg') no-repeat;
+    height: 100%;
+    width: 70%;
+    background-size: cover;
+}
+.bg1{
+    background: url('../../assets/bus61.jpg') no-repeat;
+    height: 100%;
+    width: 70%;
+    background-size: cover;
+    background-position: absolute;
+}
+.a{
+    text-decoration: none;
+    color:#037243;
+    font-weight: 500;
+}
+.a:hover{
+    cursor: pointer;
+}
+.btn{
+    color:#fff;
+    background-color:#DE9017 ;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 18px;
+    width:100%;
+    box-shadow:0 2px 2px #00000012, 0 2px 1px #0000000f, 0 1px 5px #0000001a;
+    border:1px solid rgba(0, 0, 0, .12);
+}
+.p{
+    margin-top: 35px;
+    text-align: center;
+}
+.a1{
+    text-decoration: none;
+    color:#037243;
+}
+h1.h1{
+    margin-top: 30px;
+    margin-bottom: 45px;
+}
+.form-control1{
+    margin-top: 10px;
+}
+.h1, h1 {
+    font-size: 2.5rem;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.img-container {
+    text-align: center;
+}
+
+.img {
+    display: block;
+    margin: 0 auto;
+}
+.img-container {
+    text-align: center;
+}
+
+.img1 {
+    display: flex;
+    padding-top: 35vh;
+    margin: 0 auto;
+}
+a:hover{
+    cursor:pointer;
+}

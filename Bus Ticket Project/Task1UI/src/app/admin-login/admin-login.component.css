@@ -1,0 +1,71 @@
+.column2{
+    position: relative;
+}
+tr{
+    border: 1px solid grey;
+    line-height: 3.4;
+}
+th{
+    color:rgb(2, 85, 78);
+    border: 1px solid grey;
+    text-align: center;
+    background: rgb(2, 85, 78);
+    color: white;
+}
+td{
+    border: 1px solid grey;
+    text-align: center;
+    a{
+        color:rgb(2, 85, 78);
+    }
+}
+.pl-2{
+    padding-left: 20px;
+}
+.pr-2{
+    padding-right: 20px;
+}
+
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    padding-top: 20px;
+    font-weight: 600;
+    color:rgb(2, 85, 78) ;
+}
+.scrollable-table {
+    height: 352px;
+    overflow-y: auto;
+}
+.log{
+    color: white;
+    background: rgb(2, 85, 78);
+    border: 1px solid rgb(2, 85, 78) ;
+    border-radius: 2px;
+    width:85px;
+    height: 5vh;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 1600px;
+    margin-top: -55px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+}
+.log:hover{
+    color:rgb(2, 85, 78) ;
+    background: white;
+    cursor: pointer;
+    .fa-right-from-bracket{
+        color:rgb(2, 85, 78) ;
+    }
+} 
+.fa-right-from-bracket{
+    color: #ffffff;
+    float: right;
+    margin-right: 10px;
+    transition: 0.5s;
+}
